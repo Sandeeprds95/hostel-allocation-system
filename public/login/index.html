@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html ng-app="login">
+	<head>
+ 		<meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="ContactList">
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="./../plugins/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../plugins/font-awesome/css/font-awesome.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="./../stylesheets/custom.css">
+
+        <!-- Scripts -->
+        <script src="./../plugins/jquery.min.js"></script>
+        <script src="./../plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<title>Hostel Allocation System</title>
+	</head>
+	<body>
+		<div class="container" ng-controller="loginCtrl">
+			<div class="jumbotron">
+				<h1 style="text-align:center">Hostel Allocation System</h1>
+				<table class="table">
+					<tbody>
+						<tr style="text-align:center">
+							<td><b>Username</b></td>
+							<td><input class="form-control" type="text" ng-model="hostel.username"></td>
+						</tr>
+						<tr style="text-align:center">
+							<td><b>Password</b></td>
+							<td><input class="form-control" type="password" ng-model="hostel.password"></td>
+						</tr>
+					</tbody>
+				</table>
+				<button type="button" class="btn btn-success" style="margin-left:50%" ng-click="login(hostel._id)">Login</button>
+			</div>
+		</div>
+		<!-- Scripts -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+	</body>
+</html>
