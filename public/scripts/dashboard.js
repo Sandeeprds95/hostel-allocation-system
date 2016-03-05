@@ -1,9 +1,20 @@
-/*var dashboardApp = angular.module('dashboardApp', []);
+var mongojs =require('mongojs');
+var db = mongojs('hostel',['studentdb']);
 
-dashboardApp.controller('dashboardCtrl', ['$scope', '$http', function($scope, $http) {
-
-   	console.log("inside dashboard controller");
-    //var student = loginService;
-    //console.log(student.someData);
-    
-}]);*/
+//retrives the details of the user for the dashboard
+exports.getDetails = function(req, res) {
+	console.log("I'm inside dashboard GET");
+	//console.log(req.body);
+	var user = req.body.username;
+	console.log(user);
+	db.studentdb.findOne(
+		{query: {username: user}},
+		function(err, doc) {
+			if(doc) {
+				console.log(doc);
+				res.json(doc);
+			} else {
+				res.sendStatus(404);
+			}
+	});
+};

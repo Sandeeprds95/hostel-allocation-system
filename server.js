@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var loginUser = require("./public/login/js/login.js");
+var loginUser = require("./public/scripts/login.js");
+var dashboardUser = require("./public/scripts/dashboard.js");
 
 var app = express();
 
@@ -11,6 +12,8 @@ app.use(bodyParser.json());
 //login User
 app.post('/', loginUser.checkUser);
 
+//dashboard details
+app.post('/dashboard', dashboardUser.getDetails);
 
 /*
 app.get('/contactlist', function(req, res) {
