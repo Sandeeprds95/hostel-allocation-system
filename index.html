@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+	<head>
+ 		<meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="Hostel Allocation">
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="./public/plugins/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./public/plugins/font-awesome/css/font-awesome.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="./../stylesheets/custom.css">
+
+        <!-- Scripts -->
+        <script src="./public/plugins/jquery.min.js"></script>
+        <script src="./public/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	</head>
+	<body >
+		<div ng-include = "./public/login/login.html" ng-controller="loginController as loginCtrl"></div>
+		<div ng-include = "./public/dashboard/dashboard.html" ng-controller="dashboardController as dashboardCtrl"></div>
+		<!-- Scripts -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+		<script type="text/javascript" src="public/controllers/login.js"></script>
+	</body>
+</html>

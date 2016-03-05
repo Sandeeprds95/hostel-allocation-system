@@ -1,10 +1,10 @@
 <!DOCTYPE>
-<html ng-app="dashboard">
+<html>
 	<head>
  		<meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="description" content="ContactList">
+        <meta name="description" content="Hostel Allocation">
 
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="./../plugins/bootstrap/css/bootstrap.min.css">
@@ -16,15 +16,16 @@
         <script src="./../plugins/jquery.min.js"></script>
         <script src="./../plugins/bootstrap/js/bootstrap.min.js"></script>
 
-		<title>Welcome</title>
+		<title>Dashboard</title>
 	</head>
 	<body>
-		<div class="container" ng-controller="loginCtrl">
-			<div class="jumbotron">
+		<div class="container" ng-app="dashboardApp" ng-controller="dashboardCtrl">
+			<div class="jumbotron" style="text-align:center">
+				Welcome to Dashboard.
 			</div>
 		</div>
 		<!-- Scripts -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
-		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="../controllers/login.js"></script>
 	</body>
 </html>

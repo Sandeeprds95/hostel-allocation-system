@@ -1,28 +1,15 @@
 var express = require('express');
-var app = express();
-var mongojs =require('mongojs');
-var db = mongojs('hostel',['login']);
 var bodyParser = require('body-parser');
+
+var loginUser = require("./public/login/js/login.js");
+
+var app = express();
 
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 
-app.post('/', function(req, res) {
-	console.log("I'm inside login POST");
-	//console.log(req.body);
-	var user = req.body.username;
-	var pass = req.body.password;
-	db.login.findOne(
-		{query: {username: user, password : pass}},
-		function(err, doc) {
-			if(doc) {
-				//console.log(doc._id);
-				res.json(doc);
-			} else {
-				res.sendStatus(404);
-			}
-	});
-});
+//login User
+app.post('/', loginUser.checkUser);
 
 
 /*
