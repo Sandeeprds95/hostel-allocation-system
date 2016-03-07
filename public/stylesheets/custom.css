@@ -9,7 +9,7 @@ body {
 .navbar {
     font-family: Montserrat, sans-serif;
     margin-bottom: 0;
-    background-color: #2d2d30;
+    background-color: #1E1E6B;
     border: 0;
     font-size: 13px !important;
     letter-spacing: 4px;
@@ -30,20 +30,20 @@ body {
 }
 .open .dropdown-toggle {
     color: #fff;
-    background-color: #555 !important;
+    background-color: #070F35 !important;
 }
 .dropdown-menu li a {
     color: #000 !important;
 }
 .dropdown-menu li a:hover {
-    background-color: #AAA !important;
+    background-color: #070F35 !important;
 }
 .card {
     margin: 5% auto;
     width: 85%;
 }
 .card-container {
-    background-color: #C0C0C0;
+    background-color: #F0F0F0;
 }
 .userDetails {
     color: #000;
