@@ -4,7 +4,6 @@ var db = mongojs('hostel',['studentdb']);
 //retrives the details of the user for the dashboard
 exports.getDetails = function(req, res) {
 	console.log("I'm inside dashboard GET");
-	//console.log(req.body);
 	var user = req.body.username;
 	console.log(user);
 	db.studentdb.findOne(

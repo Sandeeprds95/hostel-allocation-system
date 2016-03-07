@@ -11,7 +11,6 @@ exports.checkUser = function(req, res) {
 		{query: {username: user, password : pass}},
 		function(err, doc) {
 			if(doc) {
-				//console.log(doc._id);
 				res.json(doc);
 			} else {
 				res.sendStatus(404);

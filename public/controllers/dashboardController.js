@@ -4,11 +4,9 @@ dashboardApp.controller('dashboardCtrl', ['$scope', '$http', function($scope, $h
 
     console.log("inside dashboard controller");
     var username = sessionStorage.getItem('username');
-    //console.log(username);
     $scope.username = {
     	'username' : username
     };
-	//console.log($scope.username);
     $http.post('/dashboard', $scope.username)
     	.success(function(response) {
     		$scope.user = response;

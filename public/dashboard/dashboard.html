@@ -9,23 +9,46 @@
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="./../plugins/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./../plugins/font-awesome/css/font-awesome.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  		<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="./../stylesheets/custom.css">
 
         <!-- Scripts -->
         <script src="./../plugins/jquery.min.js"></script>
         <script src="./../plugins/bootstrap/js/bootstrap.min.js"></script>
-
 		<title>Dashboard</title>
 	</head>
+	<!-- Head ends -->
+	<!-- Body starts -->
 	<body ng-app="dashboardApp" ng-controller="dashboardCtrl">
-		<div class="container">
-			<div class="jumbotron" style="text-align:center">
-				{{ user.name }} welcome to dashboard!
-			</div>
-		</div>
+		<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+			    <div class="navbar-header">
+			    	<a class="navbar-brand" href="#myPage">Hostel Allocation System</a>
+			    </div>
+			    <div class="collapse navbar-collapse" id="myNavbar">
+			    	<ul class="nav navbar-nav navbar-right">
+				        <li><a href="#myPage">Home</a></li>
+				        <li><a href="#band">About Us</a></li>
+				        <li><a href="#tour">Contact Us</a></li>
+				        <li class="dropdown">
+				          	<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{user.name | uppercase}}
+				          	<span class="caret"></span></a>
+				          	<ul class="dropdown-menu">
+				            	<li><a href="#">Profile</a></li>
+				            	<li><a href="#">Logout</a></li> 
+				          	</ul>
+			        	</li>
+			      	</ul>
+			    </div>
+			 </div>
+		</nav>
+		
 		<!-- Scripts -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
 		<script type="text/javascript" src="../controllers/dashboardController.js"></script>
 	</body>
+	<!-- Body Ends -->
 </html>
