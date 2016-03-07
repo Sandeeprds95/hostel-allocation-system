@@ -1,6 +1,6 @@
 body {
     font: 400 15px/1.8 Lato, sans-serif;
-    background-color: #DDD;
+    background-color: #F1F1F1;
     color: #777;
 }
 .navbar-header a:hover {
@@ -37,4 +37,18 @@ body {
 }
 .dropdown-menu li a:hover {
     background-color: #AAA !important;
+}
+.card {
+    margin: 5% auto;
+    width: 85%;
+}
+.card-container {
+    background-color: #C0C0C0;
+}
+.userDetails {
+    color: #000;
+    font-weight: bold;
+}
+.tab-content {
+    margin-bottom: 15px;
 }

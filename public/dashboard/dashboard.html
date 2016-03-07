@@ -4,20 +4,26 @@
  		<meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="description" content="Hostel Allocation">
+        <meta name="description" content="Hostel Allocation System">
 
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="./../plugins/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./../plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../plugins/tabs/css/tabs.css"/>
+        <link rel="stylesheet" type="text/css" href="../plugins/tabs/css/normalize.css"/>
+        <link rel="stylesheet" type="text/css" href="../plugins/tabs/css/tabstyles.css"/>
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   		<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-
+  		
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="./../stylesheets/custom.css">
+        <link rel="stylesheet" type="text/css" href="./../stylesheets/w3-cards.css">
 
         <!-- Scripts -->
-        <script src="./../plugins/jquery.min.js"></script>
-        <script src="./../plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../plugins/jquery.min.js"></script>
+        <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../plugins/tabs/js/modernizr.custom.js"></script>
+
 		<title>Dashboard</title>
 	</head>
 	<!-- Head ends -->
@@ -30,9 +36,9 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="myNavbar">
 			    	<ul class="nav navbar-nav navbar-right">
-				        <li><a href="#myPage">Home</a></li>
-				        <li><a href="#band">About Us</a></li>
-				        <li><a href="#tour">Contact Us</a></li>
+				        <li><a href="#home">Home</a></li>
+				        <li><a href="#aboutus">About Us</a></li>
+				        <li><a href="#contactus">Contact Us</a></li>
 				        <li class="dropdown">
 				          	<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{user.name | uppercase}}
 				          	<span class="caret"></span></a>
@@ -45,9 +51,74 @@
 			    </div>
 			 </div>
 		</nav>
+		<!-- <div class="card">
+			<h3>Welcome {{user.name | uppercase}}, please follow the instructions below to select your hostel room...</h3>
+		</div> -->
+		<div class="w3-card-4 card">
+			<header class="w3-container w3-grey">
+		  		<h3><span <span class="userDetails">{{user.name}}</span></h3>
+			</header>
+			<div class="w3-container card-container">
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Branch : <span class="userDetails">{{user.branch}}</span></h4>
+					</div>
+					<div class="col-md-3">
+						<h4>DOB : <span <span class="userDetails">{{user.dob | date}}</span></h4>
+					</div>
+					<div class="col-md-5">
+						<h4 >Email ID : <span <span class="userDetails">{{user.email}}</span></h4>
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Registration No. : <span <span class="userDetails">{{user.regid}}</span></h4>
+					</div>
+					<div class="col-md-3">
+						<h4>Phone : <span <span class="userDetails">{{user.phone}}</span></h4>
+					</div>
+					<div class="col-md-5">
+						<h4>Gender : <span <span class="userDetails">{{user.gender}}</span></h4>
+					</div>
+				</div>
+		  		<hr>
+		  		<!-- <img src="img_avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px"> -->
+		  		<!-- Tabs start -->
+		  		<!-- <div class="container"> -->
+					<div class="tabs tabs-style-flip tab-content">
+						<nav>
+							<ul>
+								<li><a href="#section-flip-5" class="icon icon-plane custom-style"><span>Block</span></a></li>
+								<li><a href="#section-flip-4" class="icon icon-date"><span>Floor</span></a></li>
+								<li><a href="#section-flip-2" class="icon icon-gift"><span>Room</span></a></li>
+								<li><a href="#section-flip-3" class="icon icon-coffee"><span>Bed</span></a></li>
+							</ul>
+						</nav>
+						<div class="content-wrap">
+							<section id="section-flip-1"><p>1</p></section>
+							<section id="section-flip-2"><p>2</p></section>
+							<section id="section-flip-3"><p>3</p></section>
+							<section id="section-flip-4"><p>4</p></section>
+						</div>
+					</div>
+				<!-- </div> -->
+		  		<!-- Tabs End -->
+			</div>
+			<!-- <button class="w3-btn-block w3-dark-grey">+ Connect</button> -->
+		</div>
 		<!-- Scripts -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
 		<script type="text/javascript" src="../controllers/dashboardController.js"></script>
+		<!-- Tab script -->
+		<script src="../plugins/tabs/js/cbpFWTabs.js"></script>
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+					new CBPFWTabs( el );
+				});
+			})();
+		</script>
 	</body>
 	<!-- Body Ends -->
 </html>
