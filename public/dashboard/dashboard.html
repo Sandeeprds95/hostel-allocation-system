@@ -108,7 +108,7 @@
 							<hr>
 						</section>
 						<div class="row">
-							<button class="btn btn-primary" ng-click="selectBlock(selectedBlock)">Next</button>
+							<button class="btn btn-primary" ng-click="selectInstance(selectedBlock, 2)" ng-disabled="selectedBlock != 'A' && selectedBlock != 'B' && selectedBlock != 'C'">Next</button>
 						</div>
 		  			</div>
 		  		</div>
@@ -124,8 +124,8 @@
 							<hr>
 						</section>
 						<div class="row">
-							<button class="btn btn-warning" ng-click="previousTab(selectedBlock)">Back</button>
-							<button class="btn btn-primary" ng-click="selectBlock(selectedBlock)">Next</button>
+							<button class="btn btn-warning" ng-click="previousTab(1)">Back</button>
+							<button class="btn btn-primary" ng-click="selectInstance(selectedFloor, 3)">Next</button>
 						</div>
 		  			</div>
 		  		</div>
@@ -141,8 +141,8 @@
 							<hr>
 						</section>
 						<div class="row">
-							<button class="btn btn-warning" ng-click="previousTab(selectedBlock)">Back</button>
-							<button class="btn btn-primary" ng-click="selectBlock(selectedBlock)">Next</button>
+							<button class="btn btn-warning" ng-click="previousTab(2)">Back</button>
+							<button class="btn btn-primary" ng-click="selectInstance(selectedBlock, 4)">Next</button>
 						</div>
 		  			</div>
 		  		</div>
@@ -158,8 +158,8 @@
 							<hr>
 						</section>
 						<div class="row">
-							<button class="btn btn-warning" ng-click="previousTab(selectedBlock)">Back</button>
-							<button class="btn btn-primary" ng-click="selectBlock(selectedBlock)">Submit</button>
+							<button class="btn btn-warning" ng-click="previousTab(3)">Back</button>
+							<button class="btn btn-primary" ng-click="selectInstance(selectedBlock)">Submit</button>
 						</div>
 		  			</div>
 		  		</div>

@@ -14,8 +14,31 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
         $scope.showFloor = showFloor;
         $scope.showRoom = showRoom;
         $scope.showBed = showBed;
-        console.log($scope.showBlock);
-        console.log($scope.showFloor);
+    }
+
+    function setTab(tabNum) {
+        if(tabNum == 1) {
+            showBlock = true;
+            showFloor = false;
+            showRoom = false;
+            showBed = false;
+        } else if(tabNum == 2) {
+            showBlock = false;
+            showFloor = true;
+            showRoom = false;
+            showBed = false;
+        } else if(tabNum == 3) {
+            showBlock = false;
+            showFloor = false;
+            showRoom = true;
+            showBed = false;
+        } else {
+            showBlock = false;
+            showFloor = false;
+            showRoom = false;
+            showBed = true;
+        }
+        refresh();
     }
 
     $scope.studentResult = "";
@@ -38,13 +61,19 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
     		console.log(response);
     	});
 
-    $scope.selectBlock = function(selectedBlock) {
-        console.log(selectedBlock);
+    $scope.selectInstance = function(selectedInstance, tabNum) {
+        console.log(selectedInstance);
         $scope.studentResult = "";
-        $scope.studentResult += selectedBlock;
+        $scope.studentResult += selectedInstance;
         console.log($scope.studentResult);
-        showFloor = true;
-        showBlock = false;
-        refresh();
+        setTab(tabNum);
     };
+
+    $scope.previousTab = function(tabNum) {
+        console.log($scope.studentResult);
+        $scope.studentResult = $scope.studentResult.slice(0, -1);
+        console.log("after:" + $scope.studentResult);
+        setTab(tabNum);
+    }
+
 }]);
