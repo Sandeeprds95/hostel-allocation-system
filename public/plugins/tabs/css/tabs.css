@@ -87,7 +87,7 @@
 	z-index: 10;
 	display: inline-block;
 	margin: 0 0.4em 0 0;
-	vertical-align: middle;
+	/*vertical-align: middle;*/
 	text-transform: none;
 	font-weight: normal;
 	font-variant: normal;

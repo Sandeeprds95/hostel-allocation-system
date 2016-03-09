@@ -68,7 +68,6 @@
 					</div>
 					<div class="col-md-5">
 						<h4 >Email ID : <span <span class="userDetails">{{user.email}}</span></h4>
-						
 					</div>
 				</div>
 				<div class="row">
@@ -83,56 +82,89 @@
 					</div>
 				</div>
 		  		<hr>
-		  		<!-- <img src="img_avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px"> -->
 		  		<!-- Tabs start -->
-		  		<!-- <div class="container"> -->
-					<div class="tabs tabs-style-flip tab-content">
-						<nav>
-							<ul>
-								<li ng-show="showBlock" ng-model="showBlock">
-									<a href="#section-flip-1" class="icon icon-home"><span>Block</span></a>
-								</li>
-								<li ng-show="showFloor" ng-model="showFloor">
-									<a href="#section-flip-2" class="icon icon-date"><span>Floor</span></a>
-								</li>
-								<li ng-show="showRoom" ng-model="showRoom">
-									<a href="#section-flip-3" class="icon icon-gift"><span>Room</span></a>
-								</li>
-								<li ng-show="showBed" ng-model="showBed">
-									<a href="#section-flip-4" class="icon icon-coffee"><span>Bed</span></a>
-								</li>
-							</ul>
-						</nav>
-						<div class="content-wrap content-current">
-							<section id="section-flip-1" ng-show="showBlock" ng-model="showBlock">
-								<div class="Imagecontainer">
-    								<input type="radio" class="radio" name="block" id="A" ng-value="'A'" ng-model="selectedBlock" checked />
-    								<label for="A" class="label1">Block A</label>
-    								<h4>A Block</h4>
-								</div>
-								<div class="Imagecontainer">
-									<input type="radio" class="radio" name="block" id="B" ng-value="'B'" ng-model="selectedBlock"/>
-    								<label for="B" class="label2">Block B</label>
-    								<h4>B Block</h4>
-								</div>
-								<div class="Imagecontainer">
-									<input type="radio" class="radio" name="block" id="C" ng-value="'C'" ng-model="selectedBlock"/>
-    								<label for="C" class="label3">Block C</label>
-    								<h4>C Block</h4>
-								</div>
-								<hr>
-								<div class="row">
-									<button class="btn btn-primary" ng-click="selectBlock(selectedBlock)">Next</button>
-								</div>
-							</section>
-							<section id="section-flip-2" ng-show="showFloor" ng-model="showFloor">
-								<p>22222</p>
-							</section>
-							<section class="content-wrap content-current" id="section-flip-3" ng-show="showRoom" ng-model="showRoom"><p>3</p></section>
-							<section class="content-wrap content-current" id="section-flip-4" ng-show="showBed" ng-model="showBed"><p>4</p></section>
+
+		  		<!-- Block Tab starts -->
+		  		<div class="tabs tabs-style-flip">
+		  			<div ng-model="showBlock" ng-show="showBlock" class="tab-heading">
+		  				<span class="icon icon-home"><h2 style="display:inline">Block</h2></span>
+		  				<section class="content-wrap content-current">
+		  					<hr>
+							<div class="Imagecontainer">
+    							<input type="radio" class="radio" name="block" id="A" ng-value="'A'" ng-model="selectedBlock" checked />
+    							<label for="A" class="label1">Block A</label>
+    							<h4>A Block</h4>
+							</div>
+							<div class="Imagecontainer">
+								<input type="radio" class="radio" name="block" id="B" ng-value="'B'" ng-model="selectedBlock"/>
+    							<label for="B" class="label2">Block B</label>
+    							<h4>B Block</h4>
+							</div>
+							<div class="Imagecontainer">
+								<input type="radio" class="radio" name="block" id="C" ng-value="'C'" ng-model="selectedBlock"/>
+    							<label for="C" class="label3">Block C</label>
+   								<h4>C Block</h4>
+							</div>
+							<hr>
+						</section>
+						<div class="row">
+							<button class="btn btn-primary" ng-click="selectBlock(selectedBlock)">Next</button>
 						</div>
-					</div>
-				<!-- </div> -->
+		  			</div>
+		  		</div>
+		  		<!-- Block tab ends -->
+
+		  		<!-- Floor Tab starts -->
+		  		<div class="tabs tabs-style-flip">
+		  			<div ng-model="showFloor" ng-show="showFloor" class="tab-heading">
+		  				<span class="icon icon-date"><h2 style="display:inline">Floor</h2></span>
+		  				<section class="content-wrap content-current">
+		  					<hr>
+							
+							<hr>
+						</section>
+						<div class="row">
+							<button class="btn btn-warning" ng-click="previousTab(selectedBlock)">Back</button>
+							<button class="btn btn-primary" ng-click="selectBlock(selectedBlock)">Next</button>
+						</div>
+		  			</div>
+		  		</div>
+		  		<!-- Floor tab ends -->
+
+		  		<!-- Room Tab starts -->
+		  		<div class="tabs tabs-style-flip">
+		  			<div ng-model="showRoom" ng-show="showRoom" class="tab-heading">
+		  				<span class="icon icon-date"><h2 style="display:inline">Room</h2></span>
+		  				<section class="content-wrap content-current">
+		  					<hr>
+							
+							<hr>
+						</section>
+						<div class="row">
+							<button class="btn btn-warning" ng-click="previousTab(selectedBlock)">Back</button>
+							<button class="btn btn-primary" ng-click="selectBlock(selectedBlock)">Next</button>
+						</div>
+		  			</div>
+		  		</div>
+		  		<!-- Room tab ends -->
+
+		  		<!-- Bed Tab starts -->
+		  		<div class="tabs tabs-style-flip">
+		  			<div ng-model="showBed" ng-show="showBed" class="tab-heading">
+		  				<span class="icon icon-date"><h2 style="display:inline">Bed</h2></span>
+		  				<section class="content-wrap content-current">
+		  					<hr>
+							
+							<hr>
+						</section>
+						<div class="row">
+							<button class="btn btn-warning" ng-click="previousTab(selectedBlock)">Back</button>
+							<button class="btn btn-primary" ng-click="selectBlock(selectedBlock)">Submit</button>
+						</div>
+		  			</div>
+		  		</div>
+		  		<!-- Bed tab ends -->
+
 		  		<!-- Tabs End -->
 			</div>
 		</div>
@@ -140,13 +172,13 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
 		<script type="text/javascript" src="../controllers/dashboardController.js"></script>
 		<!-- Tab script -->
-		<script src="../plugins/tabs/js/cbpFWTabs.js"></script>
+		<!--<script src="../plugins/tabs/js/cbpFWTabs.js"></script>-->
 		<script>
-			(function() {
+			/*(function() {
 				[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
 					new CBPFWTabs( el );
 				});
-			})();
+			})();*/
 		</script>
 	</body>
 	<!-- Body Ends -->

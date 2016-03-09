@@ -35,7 +35,7 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
 h1,h2,h3,h4,h5,h6{font-weight:400;margin:10px 0}
 .w3-wide{letter-spacing:4px}
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:inherit}
-hr{height:0;border:0;border-top:1px solid #eee;margin:20px 0}
+hr{height:0;border:0;border-top:1px solid #2196F3;margin:20px 0}
 img{margin-bottom:-5px}
 a{color:inherit}
 table{border-collapse:collapse;border-spacing:0;width:100%;display:table}
@@ -248,7 +248,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 @keyframes w3-spin{
 0%{-webkit-transform:rotate(0deg);transform: rotate(0deg)}
 100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
-.w3-container{padding:0.01em 16px}
+.w3-container{padding:0.01em 16px 10px}
 .w3-example{background-color:#f1f1f1;padding:0.01em 16px}
 .w3-section,.w3-paragraph{margin-top:16px;margin-bottom:16px}
 .w3-code{font-family:Consolas,"courier new";font-size:16px;line-height:1.4;width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #009688;word-wrap:break-word}

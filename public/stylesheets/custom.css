@@ -84,3 +84,7 @@ body {
 input[type="radio"]:checked + label {
     border: 10px solid orange;
 }
+.tab-heading {
+    text-align: center;
+    color: #000;
+}
