@@ -63,9 +63,8 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
 
     $scope.selectInstance = function(selectedInstance, tabNum) {
         console.log(selectedInstance);
-        $scope.studentResult = "";
         $scope.studentResult += selectedInstance;
-        console.log($scope.studentResult);
+        console.log("result: " + $scope.studentResult);
         setTab(tabNum);
     };
 

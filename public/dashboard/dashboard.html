@@ -92,17 +92,17 @@
 		  					<hr>
 							<div class="Imagecontainer">
     							<input type="radio" class="radio" name="block" id="A" ng-value="'A'" ng-model="selectedBlock" checked />
-    							<label for="A" class="label1">Block A</label>
+    							<label for="A" class="block1">Block A</label>
     							<h4>A Block</h4>
 							</div>
 							<div class="Imagecontainer">
 								<input type="radio" class="radio" name="block" id="B" ng-value="'B'" ng-model="selectedBlock"/>
-    							<label for="B" class="label2">Block B</label>
+    							<label for="B" class="block2">Block B</label>
     							<h4>B Block</h4>
 							</div>
 							<div class="Imagecontainer">
 								<input type="radio" class="radio" name="block" id="C" ng-value="'C'" ng-model="selectedBlock"/>
-    							<label for="C" class="label3">Block C</label>
+    							<label for="C" class="block3">Block C</label>
    								<h4>C Block</h4>
 							</div>
 							<hr>
@@ -120,12 +120,37 @@
 		  				<span class="icon icon-date"><h2 style="display:inline">Floor</h2></span>
 		  				<section class="content-wrap content-current">
 		  					<hr>
-							
+								<table id="t1" class="floor-table">
+									<tr class="odd">
+										<td>
+											<input type="radio" class="radio" name="floor" id="3" ng-value="'3'" ng-model="selectedFloor"/>
+    										<label for="3" class="floor3">Third Floor</label>
+    									</td>
+									</tr>
+									<tr class="even">
+										<td>
+											<input type="radio" class="radio" name="floor" id="2"  ng-model="selectedFloor" ng-value="'2'"/>
+											<label for="2" class="floor2">Second Floor</label>
+    									</td>
+    								</tr>
+									<tr class="odd">
+										<td ng-model="selectedFloor" value="'1'">
+											<input type="radio" class="radio" name="floor" id="1"  ng-model="selectedFloor" ng-value="'1'"/>
+    										<label for="1" class="floor1">First Floor</label>
+										</td>
+									</tr>
+									<tr class="even">
+										<td ng-model="selectedFloor" value="'0'">
+											<input type="radio" class="radio" name="floor" id="0"  ng-model="selectedFloor" ng-value="'0'"/>
+    										<label for="0" class="floor0">Ground Floor</label>
+										</td>
+									</tr>
+								</table>
 							<hr>
 						</section>
 						<div class="row">
 							<button class="btn btn-warning" ng-click="previousTab(1)">Back</button>
-							<button class="btn btn-primary" ng-click="selectInstance(selectedFloor, 3)">Next</button>
+							<button class="btn btn-primary" ng-click="selectInstance(selectedFloor, 3)" ng-disabled="selectedFloor != '0' && selectedFloor != '1' && selectedFloor != '2' && selectedFloor != '3'">Next</button>
 						</div>
 		  			</div>
 		  		</div>

@@ -60,31 +60,89 @@ body {
     opacity: 0;
     position: absolute;
 }
-.label1 {
+.block1 {
     background: url('../images/B1.jpg');
+    cursor: pointer;
     text-indent: -999em;
     border: 10px solid white;
     width: 250px;
-    height: 250px;
+    height: 240px;
 }
-.label2 {
+.block2 {
     background: url('../images/B1.jpg');
+    cursor: pointer;
     text-indent: -999em;
     border: 10px solid white;
     width: 250px;
-    height: 250px;
+    height: 240px;
 }
-.label3 {
+.block3 {
     background: url('../images/B1.jpg');
+    cursor: pointer;
     text-indent: -999em;
     border: 10px solid white;
     width: 250px;
-    height: 250px;
+    height: 240px;
 }
 input[type="radio"]:checked + label {
-    border: 10px solid orange;
+    border: 5px solid orange;
 }
 .tab-heading {
     text-align: center;
     color: #000;
+}
+.floor-table {
+    text-align: center;
+}
+table {
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+table#t1 {
+    vertical-align: middle;
+    width: 50%;
+    margin-left: 25%;
+}
+table#t1 tr:nth-child(even) {
+    background-color: #BDE4FF;
+}
+table#t1 tr:nth-child(odd) {
+    background-color: #FDFF93;
+}
+.odd, .even {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: all 0.3s ease-in-out;
+}
+.odd::after, .even::after {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.odd:hover, .even:hover {
+  transform: scale(1.2, 1.2);
+}
+.odd:hover::after, .even:hover::after {
+  opacity: 1;
+}
+td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #000;
+}
+.floor0 {
+    cursor: pointer;
+    font-weight: normal;
+}
+.floor1 {
+    cursor: pointer;
+    font-weight: normal;
+}
+.floor2 {
+    cursor: pointer;
+    font-weight: normal;
+}
+.floor3 {
+    cursor: pointer;
+    font-weight: normal;
 }
