@@ -130,10 +130,6 @@ td {
     padding-bottom: 5px;
     color: #000;
 }
-.floor0 {
-    cursor: pointer;
-    font-weight: normal;
-}
 .floor1 {
     cursor: pointer;
     font-weight: normal;
@@ -143,6 +139,10 @@ td {
     font-weight: normal;
 }
 .floor3 {
+    cursor: pointer;
+    font-weight: normal;
+}
+.floor4 {
     cursor: pointer;
     font-weight: normal;
 }

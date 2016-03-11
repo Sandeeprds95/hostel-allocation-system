@@ -27,6 +27,7 @@
 		<title>Dashboard</title>
 	</head>
 	<!-- Head ends -->
+
 	<!-- Body starts -->
 	<body ng-app="dashboardApp" ng-controller="dashboardController as dashboardCtrl">
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -51,9 +52,6 @@
 			    </div>
 			 </div>
 		</nav>
-		<!-- <div class="card">
-			<h3>Welcome {{user.name | uppercase}}, please follow the instructions below to select your hostel room...</h3>
-		</div> -->
 		<div class="w3-card-4 card">
 			<header class="w3-container w3-blue">
 		  		<h3><span <span class="userDetails">{{user.name}}</span></h3>
@@ -123,26 +121,26 @@
 								<table id="t1" class="floor-table">
 									<tr class="odd">
 										<td>
-											<input type="radio" class="radio" name="floor" id="3" ng-value="'3'" ng-model="selectedFloor"/>
-    										<label for="3" class="floor3">Third Floor</label>
+											<input type="radio" class="radio" name="floor" id="4" ng-value="'4'" ng-model="selectedFloor"/>
+    										<label for="4" class="floor4">Fourth Floor</label>
     									</td>
 									</tr>
 									<tr class="even">
 										<td>
-											<input type="radio" class="radio" name="floor" id="2"  ng-model="selectedFloor" ng-value="'2'"/>
-											<label for="2" class="floor2">Second Floor</label>
+											<input type="radio" class="radio" name="floor" id="3"  ng-model="selectedFloor" ng-value="'3'"/>
+											<label for="3" class="floor3">Third Floor</label>
     									</td>
     								</tr>
 									<tr class="odd">
-										<td ng-model="selectedFloor" value="'1'">
-											<input type="radio" class="radio" name="floor" id="1"  ng-model="selectedFloor" ng-value="'1'"/>
-    										<label for="1" class="floor1">First Floor</label>
+										<td>
+											<input type="radio" class="radio" name="floor" id="2"  ng-model="selectedFloor" ng-value="'2'"/>
+    										<label for="2" class="floor2">Second Floor</label>
 										</td>
 									</tr>
 									<tr class="even">
-										<td ng-model="selectedFloor" value="'0'">
-											<input type="radio" class="radio" name="floor" id="0"  ng-model="selectedFloor" ng-value="'0'"/>
-    										<label for="0" class="floor0">Ground Floor</label>
+										<td>
+											<input type="radio" class="radio" name="floor" id="1"  ng-model="selectedFloor" ng-value="'1'"/>
+    										<label for="1" class="floor1">First Floor</label>
 										</td>
 									</tr>
 								</table>
@@ -150,7 +148,7 @@
 						</section>
 						<div class="row">
 							<button class="btn btn-primary" ng-click="previousTab(1)">Back</button>
-							<button class="btn btn-success" ng-click="selectInstance(selectedFloor, 3)" ng-disabled="selectedFloor != '0' && selectedFloor != '1' && selectedFloor != '2' && selectedFloor != '3'">Next</button>
+							<button class="btn btn-success" ng-click="selectInstance(selectedFloor, 3)" ng-disabled="selectedFloor != '1' && selectedFloor != '2' && selectedFloor != '3' && selectedFloor != '4'">Next</button>
 						</div>
 		  			</div>
 		  		</div>
@@ -162,12 +160,14 @@
 		  				<span class="icon icon-date"><h2 style="display:inline">Room</h2></span>
 		  				<section class="content-wrap content-current">
 		  					<hr>
-							
+		  						<h4>Enter your desired room number (00 - 19)</h4>
+								<input type="number" name="room" ng-model="selectedRoom">
+								<button class="btn btn-warning" ng-click="checkAvailability(selectedRoom)">Check availability</button>
 							<hr>
 						</section>
 						<div class="row">
-							<button class="btn btn-warning" ng-click="previousTab(2)">Back</button>
-							<button class="btn btn-primary" ng-click="selectInstance(selectedBlock, 4)">Next</button>
+							<button class="btn btn-primary" ng-click="previousTab(2)">Back</button>
+							<button class="btn btn-success" ng-click="selectInstance(selectedBlock, 4)">Next</button>
 						</div>
 		  			</div>
 		  		</div>
@@ -179,12 +179,12 @@
 		  				<span class="icon icon-date"><h2 style="display:inline">Bed</h2></span>
 		  				<section class="content-wrap content-current">
 		  					<hr>
-							
+
 							<hr>
 						</section>
 						<div class="row">
-							<button class="btn btn-warning" ng-click="previousTab(3)">Back</button>
-							<button class="btn btn-primary" ng-click="selectInstance(selectedBlock)">Submit</button>
+							<button class="btn btn-primary" ng-click="previousTab(3)">Back</button>
+							<button class="btn btn-success" ng-click="selectInstance(selectedBlock)">Submit</button>
 						</div>
 		  			</div>
 		  		</div>

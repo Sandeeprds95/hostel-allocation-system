@@ -7,6 +7,8 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
     var showRoom = false;
     var showBed = false;
 
+    $scope.selectedRoom = "";
+
     refresh();
 
     function refresh() {
@@ -42,6 +44,7 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
     }
 
     $scope.studentResult = "";
+    $scope.studentFloor = "";
 
     
     console.log("inside dashboard controller");
@@ -65,6 +68,9 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
         console.log(selectedInstance);
         $scope.studentResult += selectedInstance;
         console.log("result: " + $scope.studentResult);
+        if(tabNum == 3) {
+            $scope.selectedRoom = Number($scope.selectedFloor);
+        }
         setTab(tabNum);
     };
 
@@ -72,7 +78,14 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
         console.log($scope.studentResult);
         $scope.studentResult = $scope.studentResult.slice(0, -1);
         console.log("after:" + $scope.studentResult);
+        if(tabNum == 3) {
+            $scope.selectedRoom = Number($scope.selectedFloor);
+        }
         setTab(tabNum);
+    }
+
+    $scope.checkAvailability = function(roomNumber) {
+        console.log(roomNumber);
     }
 
 }]);

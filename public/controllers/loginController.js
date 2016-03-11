@@ -3,6 +3,7 @@ var loginApp = angular.module('loginApp', []);
 loginApp.controller('loginCtrl', ['$scope', '$http', function($scope, $http) {
 
    	console.log("inside login controller");
+    //User login
     $scope.login = function() {
         console.log($scope.student);
         $http.post('/', $scope.student)
