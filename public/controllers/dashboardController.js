@@ -92,9 +92,15 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
             'floor' : $scope.selectedFloor,
             'room' : roomNum
         };
+        console.log($scope.hostelDetails);
         $http.post('/check', $scope.hostelDetails)
             .success(function(response) {
                 console.log(response);
+                if(response >=3 ) {
+                    $scope.roomAvailable = false;
+                } else {
+                    $scope.roomAvailable = true;
+                }
             })
             .error(function(response) {
                 console.log(response);

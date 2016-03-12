@@ -7,7 +7,9 @@ exports.getUserDetails = function(req, res) {
 	var user = req.body.username;
 	console.log(user);
 	db.studentdb.findOne(
-		{query: {username: user}},
+		{
+			query: {username: user}
+		},
 		function(err, doc) {
 			if(doc) {
 				console.log(doc);
@@ -19,8 +21,13 @@ exports.getUserDetails = function(req, res) {
 };
 
 exports.checkRoomAvailability = function(req, res) {
-	var block = req.body.block;
-	var floor = req.body.floor;
-	var room = req.body.room;
-	console.log(block + " " + floor + " " + room);
+	var userBlock = req.body.block;
+	var userFloor = req.body.floor;
+	var userRoom = req.body.room;
+	console.log(userBlock + " " + userFloor + " " + userRoom);
+	db.studentdb.find({block:userBlock, floor:userFloor, room: userRoom}).
+		count(function(err, doc) {
+			console.log(doc);
+			res.json(doc);
+		});
 };
