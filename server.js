@@ -13,7 +13,10 @@ app.use(bodyParser.json());
 app.post('/', loginUser.checkUser);
 
 //dashboard details
-app.post('/dashboard', dashboardUser.getDetails);
+app.post('/dashboard', dashboardUser.getUserDetails);
+
+//check availability of rooms
+app.post('/check', dashboardUser.checkRoomAvailability)
 
 /*
 app.get('/contactlist', function(req, res) {

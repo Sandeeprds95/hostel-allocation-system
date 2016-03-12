@@ -7,10 +7,18 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
     var showRoom = false;
     var showBed = false;
 
-    $scope.selectedRoom = "";
+    //Division scopes
+    $scope.selectedBlock;
+    $scope.selectedFloor;
+    $scope.selectedRoom;
+    $scope.selectedBed;
+
+    //Room availability
+    $scope.roomAvailable = false;
 
     refresh();
 
+    //Changes the card according to the visibility
     function refresh() {
         $scope.showBlock = showBlock;
         $scope.showFloor = showFloor;
@@ -18,7 +26,12 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
         $scope.showBed = showBed;
     }
 
-    function setTab(tabNum) {
+    //Sets the the value of the tabs
+    $scope.setTab = function(tabNum) {
+        console.log($scope.selectedBlock);
+        console.log($scope.selectedFloor);
+        console.log($scope.selectedRoom);
+        console.log($scope.selectedBed);
         if(tabNum == 1) {
             showBlock = true;
             showFloor = false;
@@ -45,7 +58,6 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
 
     $scope.studentResult = "";
     $scope.studentFloor = "";
-
     
     console.log("inside dashboard controller");
     
@@ -64,28 +76,29 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
     		console.log(response);
     	});
 
-    $scope.selectInstance = function(selectedInstance, tabNum) {
-        console.log(selectedInstance);
-        $scope.studentResult += selectedInstance;
-        console.log("result: " + $scope.studentResult);
-        if(tabNum == 3) {
-            $scope.selectedRoom = Number($scope.selectedFloor);
-        }
-        setTab(tabNum);
-    };
-
+    //Changes to the previous tab
     $scope.previousTab = function(tabNum) {
-        console.log($scope.studentResult);
-        $scope.studentResult = $scope.studentResult.slice(0, -1);
-        console.log("after:" + $scope.studentResult);
-        if(tabNum == 3) {
-            $scope.selectedRoom = Number($scope.selectedFloor);
-        }
-        setTab(tabNum);
+        $scope.setTab(tabNum);
     }
 
-    $scope.checkAvailability = function(roomNumber) {
-        console.log(roomNumber);
+    $scope.checkAvailability = function() {
+        var pad = '0';
+        var roomNum = String($scope.selectedRoom);
+        if(roomNum.length <= 1) {
+            roomNum = pad + roomNum;
+        }
+        $scope.hostelDetails = {
+            'block' : $scope.selectedBlock,
+            'floor' : $scope.selectedFloor,
+            'room' : roomNum
+        };
+        $http.post('/check', $scope.hostelDetails)
+            .success(function(response) {
+                console.log(response);
+            })
+            .error(function(response) {
+                console.log(response);
+            });
     }
 
 }]);
