@@ -15,7 +15,7 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
 
     //Room availability
     $scope.roomAvailable = false;
-    $scope.roomUnavailable = false;
+    $scope.roomUnavailable = true;
 
     refresh();
 
@@ -58,9 +58,6 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
         }
         refresh();
     }
-
-    $scope.studentResult = "";
-    $scope.studentFloor = "";
     
     console.log("inside dashboard controller");
     
@@ -101,11 +98,11 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
             .success(function(response) {
                 console.log(response);
                 if(response >=3 ) {
-                    $scope.roomAvailable = false;
                     $scope.roomUnavailable = false;
+                    $scope.roomAvailable = false;
                 } else {
-                    $scope.roomAvailable = true;
                     $scope.roomUnavailable = true;
+                    $scope.roomAvailable = true;
                 }
             })
             .error(function(response) {
@@ -115,9 +112,7 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
 
     //input value change in room number
     $scope.inputChange = function() {
-        if($scope.selectedRoom > 0 && $scope.selectedRoom < 20) {
-            $scope.roomUnavailable = false;
-            $scope.roomAvailable = false;
-        }
+        $scope.roomUnavailable = true;
+        $scope.roomAvailable = false;
     }
 }]);
