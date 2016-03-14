@@ -1,46 +1,68 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 	<head>
- 		<meta charset='utf-8'>
-        <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="description" content="Hostel Allocation">
-
-        <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="./../plugins/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./../plugins/font-awesome/css/font-awesome.min.css">
-        <!-- Custom CSS -->
-        <link rel="stylesheet" type="text/css" href="./../stylesheets/custom.css">
-
-        <!-- Scripts -->
-        <script src="./../plugins/jquery.min.js"></script>
-        <script src="./../plugins/bootstrap/js/bootstrap.min.js"></script>
-
+		<meta charset="utf-8">
 		<title>Hostel Allocation System</title>
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	    <meta name="viewport" content="width=device-width,initial-scale=1">
+	    <meta name="description" content="Hostel Allocation">
+
+	    <!-- CSS -->
+	    <link rel="stylesheet" href="../stylesheets/animate.css">
+
+	    <!-- Custom CSS -->
+	    <link rel="stylesheet" href="../stylesheets/style.css">
+
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 	</head>
+
 	<body ng-app="loginApp" ng-controller = "loginCtrl">
 		<div class="container">
-			<div class="jumbotron">
-				<h1 style="text-align:center">Hostel Allocation System</h1>
-				<table class="table">
-					<tbody>
-						<tr style="text-align:center">
-							<td><b>Username</b></td>
-							<td><input class="form-control" type="text" ng-model="student.username"></td>
-						</tr>
-						<tr style="text-align:center">
-							<td><b>Password</b></td>
-							<td><input class="form-control" type="password" ng-model="student.password"></td>
-						</tr>
-					</tbody>
-				</table>
-				<button type="button" class="btn btn-success" style="margin-left:50%" ng-click="login()">Login</button>
+			<div class="top">
+				<h1 id="title" class="hidden"><span id="logo"><span>Hostel Allocation System</span></span></h1>
+			</div>
+			<div class="login-box animated fadeIn">
+				<div class="box-header">
+					<h2>Log In</h2>
+				</div>
+				<label for="username">Username</label>
+				<br/>
+				<input type="text" id="username" ng-model="student.username">
+				<br/>
+				<label for="password">Password</label>
+				<br/>
+				<input type="password" id="password" ng-model="student.password">
+				<br/>
+				<button type="submit" ng-click="login()">Sign In</button>
+				<br/>
+				<a href="#"><p class="small">Forgot your password?</p></a>
 			</div>
 		</div>
-		
-		<!-- Scripts -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
-		<script type="text/javascript" src="../controllers/loginController.js"></script>
 	</body>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="../controllers/loginController.js"></script>
+	<script>
+		$(document).ready(function () {
+	    	/*$('#logo').addClass('animated fadeIn');*/
+	    	$("input:text:visible:first").focus();
+		});
+		$('#username').focus(function() {
+			$('label[for="username"]').addClass('selected');
+		});
+		$('#username').blur(function() {
+			$('label[for="username"]').removeClass('selected');
+		});
+		$('#password').focus(function() {
+			$('label[for="password"]').addClass('selected');
+		});
+		$('#password').blur(function() {
+			$('label[for="password"]').removeClass('selected');
+		});
+	</script>
+
 </html>

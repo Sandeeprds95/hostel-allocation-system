@@ -20,6 +20,7 @@ exports.getUserDetails = function(req, res) {
 	});
 };
 
+//Sends the count of students in a single room
 exports.checkRoomAvailability = function(req, res) {
 	var userBlock = req.body.block;
 	var userFloor = req.body.floor;

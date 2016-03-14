@@ -160,10 +160,13 @@
 		  				<span class="icon icon-date"><h2 style="display:inline">Room</h2></span>
 		  				<section class="content-wrap content-current">
 		  					<hr>
+		  					<form name="myForm">
 		  						<h4>Enter your desired room number (01 - 19)</h4>
-								<input type="number" name="room" ng-model="selectedRoom" ng-min="1" ng-max="19" required>
+								<input type="number" name="room" ng-model="selectedRoom" ng-min="1" ng-max="19" ng-change="inputChange()" required>
 								<button class="btn btn-warning" ng-click="checkAvailability(selectedRoom)" ng-if="selectedRoom>0 && selectedRoom<20">Check availability</button>
 								<p ng-show="roomAvailable" style="color:green">Room available. Please proceed.</p>
+								<p ng-hide="roomUnavailable" style="color:red">Room unavailable. Select another room.</p>
+							</form>
 							<hr>
 						</section>
 						<div class="row">
