@@ -1,0 +1,108 @@
+<!DOCTYPE>
+<html>
+	<head>
+ 		<meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="Hostel Allocation System">
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="./../plugins/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../plugins/tabs/css/tabs.css"/>
+        <link rel="stylesheet" type="text/css" href="../plugins/tabs/css/normalize.css"/>
+        <link rel="stylesheet" type="text/css" href="../plugins/tabs/css/tabstyles.css"/>
+        <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  		<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  		
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="./../stylesheets/custom.css">
+        <link rel="stylesheet" type="text/css" href="./../stylesheets/w3-cards.css">
+
+		<title>About Us</title>
+	</head>
+	<!-- Head ends -->
+
+	<!-- Body starts -->
+	<body ng-app="aboutUsApp" ng-controller="aboutUsCtrl">
+		<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+			    <div class="navbar-header">
+			    	<a class="navbar-brand" href="#myPage">Hostel Allocation System</a>
+			    </div>
+			    <div class="collapse navbar-collapse" id="myNavbar">
+			    	<ul class="nav navbar-nav navbar-right">
+				        <li><a href="dashboard.html">Home</a></li>
+				        <li><a href="aboutUs.html">About Us</a></li>
+				        <li><a href="contactUs.html">Contact Us</a></li>
+				        <li class="dropdown">
+				          	<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{user.name | uppercase}}
+				          	<span class="caret"></span></a>
+				          	<ul class="dropdown-menu">
+				            	<li><a href="profile.html">Profile</a></li>
+				            	<li><a href="#">Logout</a></li> 
+				          	</ul>
+			        	</li>
+			      	</ul>
+			    </div>
+			 </div>
+		</nav>
+
+		<div class="w3-card-4 card">
+			<header class="w3-container w3-blue">
+				<h3><span <span class="userDetails">Contact Us</span></h3>
+			</header>
+			<div class="w3-container card-container">
+				<div class="tabs tabs-style-flip">
+					<div class="tab-heading">
+						<section class="content-wrap content-current">
+						<hr>
+						<div class="row">
+							<div class="col-md-4">
+								<img src="../images/kartik.jpg" class="img-circle" width="144" height="206">
+								<h3>Kartik Neb</h3>
+								<h5>UX/UI Designer</h5>
+								<ul class="social-icons icon-circle icon-zoom list-unstyled list-inline">
+									<li><a href="https://github.com/Sandeeprds95/"><i class="fa fa-github"></i></a></li>
+			                        <li> <a href="https://www.linkedin.com/in/sandeeprds95"><i class="fa fa-linkedin"></i></a></li>
+			                        <li> <a href="https://www.facebook.com/kartik.neb"><i class="fa fa-facebook"></i></a></li>
+			                        <li> <a href="https://twitter.com/ImSandeepR"><i class="fa fa-twitter"></i></a></li>
+			                    </ul>
+							</div>
+							<div class="col-md-4">
+								<img src="../images/rishi.jpg" class="img-circle" width="144" height="206">
+								<h3>Rishi Rana</h3>
+								<h5>Front End Developer</h5>
+								<ul class="social-icons icon-circle icon-zoom list-unstyled list-inline">
+									<li><a href="https://github.com/Sandeeprds95/"><i class="fa fa-github"></i></a></li>
+			                        <li> <a href="https://goo.gl/YnwfnW"><i class="fa fa-linkedin"></i></a></li>
+			                        <li> <a href="https://www.facebook.com/rishirana175"><i class="fa fa-facebook"></i></a></li>
+			                        <li> <a href="https://twitter.com/ImSandeepR"><i class="fa fa-twitter"></i></a></li>
+			                    </ul>
+							</div>
+							<div class="col-md-4">
+								<img src="../images/sandeep.jpg" class="img-circle" width="134" height="206">
+								<h3>Sandeep Ravindra</h3>
+								<h5>Back End Developer</h5>
+                        		<ul class="social-icons icon-circle icon-zoom list-unstyled list-inline">
+                            		<li><a href="https://github.com/Sandeeprds95/"><i class="fa fa-github"></i></a></li>
+			                        <li> <a href="https://www.linkedin.com/in/sandeeprds95"><i class="fa fa-linkedin"></i></a></li>
+			                        <li> <a href="https://www.facebook.com/sandeeprds95"><i class="fa fa-facebook"></i></a></li>
+			                        <li> <a href="https://twitter.com/ImSandeepR"><i class="fa fa-twitter"></i></a></li>
+			                    </ul>
+							</div>
+						</div>
+						<hr>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+	<script src="../plugins/jquery.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../controllers/contactUsController.js"></script>
+</html>

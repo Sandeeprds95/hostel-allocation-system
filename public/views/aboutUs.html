@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="description" content="Hostel Allocation System">
+
+		<!-- Bootstrap Core CSS -->
+		<link rel="stylesheet" href="./../plugins/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../plugins/tabs/css/tabs.css"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/tabs/css/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/tabs/css/tabstyles.css"/>
+		<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" type="text/css" href="./../stylesheets/custom.css">
+		<link rel="stylesheet" type="text/css" href="./../stylesheets/w3-cards.css">
+
+		<title>About Us</title>
+	</head>
+<!-- Head ends -->
+
+<!-- Body starts -->
+	<body ng-app="aboutUsApp" ng-controller="aboutUsCtrl">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#myPage">Hostel Allocation System</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="dashboard.html">Home</a></li>
+						<li><a href="aboutUs.html">About Us</a></li>
+						<li><a href="contactUs.html">Contact Us</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{user.name | uppercase}}
+								<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="profile.html">Profile</a></li>
+								<li><a href="#">Logout</a></li> 
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="w3-card-4 card">
+			<header class="w3-container w3-blue">
+				<h3><span <span class="userDetails">About Us</span></h3>
+			</header>
+			<div class="w3-container card-container">
+				<div class="tabs tabs-style-flip">
+					<div class="content-heading">
+						<section class="content-wrap content-current">
+						<hr>
+						<p style="margin-left:20px">
+							The process of allotting the hostel rooms to college students faces various issues such as, not getting the desired hostel or room or even the room mates.<br>
+							Moreover, since till date manual room allocation is practiced, issues such as, loss of student records or allocating a bed to more than one student exists.<br>
+							In order to ease out the process of hostel allocation and removing such issues, we as a team have built an online <b>hostel allocation system</b>.<br><br>
+							Each student is provided with a login ID and password to log in to their profile.<br><br>
+							Students are provided with the flexibility to select the hostel building of their choice if it is available.<br>
+							Once a particular building is selected, next choice given to the students is selecting the floor they want, keeping in account the availability of a room on that particular floor.
+							On proceeding further, the student can select the room of his choice (if it is available i.e; if one of the three beds is vacant).<br><br>
+							The last step of this entire process is selecting the bed of their choice (one nearer to the window, one in the middle or the one nearer to the door.) Once this process is completed, the student’s details are saved into the database and that particular bed is marked as allocated and isn’t available for any other student.<br><br>
+							Coming to the technical details regarding the said project, the software tools that have been used are <b>MongoDB</b> as the database on the backend, <b>Express</b> as the middleware connectivity, <b>AngularJS</b> on the frontend and <b>NodeJS</b> as the server on the backend. These are popularly known as <b>MEAN Stack</b>.<br>
+						<p>
+						<hr>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+	<script src="../plugins/jquery.min.js"></script>
+	<script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../controllers/aboutUsController.js"></script>
+	</html>

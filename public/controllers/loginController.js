@@ -9,7 +9,7 @@ loginApp.controller('loginCtrl', ['$scope', '$http', function($scope, $http) {
         $http.post('/', $scope.student)
             .success(function(response) {
                 sessionStorage.setItem('username', response.username);
-                window.location = '../dashboard/dashboard.html';
+                window.location = '../views/dashboard.html';
             })
             .error(function(response) {
                 alert("Incorrect username or password");
