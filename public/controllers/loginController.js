@@ -5,7 +5,6 @@ loginApp.controller('loginCtrl', ['$scope', '$http', function($scope, $http) {
    	console.log("inside login controller");
     //User login
     $scope.login = function() {
-        console.log($scope.student);
         $http.post('/', $scope.student)
             .success(function(response) {
                 sessionStorage.setItem('username', response.username);
@@ -13,7 +12,6 @@ loginApp.controller('loginCtrl', ['$scope', '$http', function($scope, $http) {
             })
             .error(function(response) {
                 alert("Incorrect username or password");
-                console.log(response);
                 $scope.student.username = "";
                 $scope.student.password = "";
             });

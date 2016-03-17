@@ -58,9 +58,7 @@ dashboardApp.controller('dashboardController', ['$scope', '$http', function($sco
         }
         refresh();
     }
-    
-    console.log("inside dashboard controller");
-    
+        
     //Retrieving username from Session storage
     var username = sessionStorage.getItem('username');
     //user object
