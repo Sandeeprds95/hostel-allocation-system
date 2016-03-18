@@ -2,6 +2,7 @@ var dashboardApp = angular.module('dashboardApp', []);
 
 dashboardApp.controller('dashboardController', ['$scope', '$http', function($scope, $http) {
 
+    //card boolean values
     var showBlock = true;
     var showFloor = false;
     var showRoom = false;
